@@ -2,7 +2,7 @@
 
 object NLgNApp {
   val usage = """
-    Usage: nlng <expected num>
+    Usage: nlng.scala <expected num>
 
     Calculates the biggest integer N for N * lg(N) < expected number.
     Multiplication operator is supported to evaluate the expected number, e.g.
