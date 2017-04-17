@@ -18,9 +18,12 @@ object NLgNApp {
       val expect = args(0).split('*').foldLeft(1.0)(_.toDouble * _.toDouble)
       println(f"Max expected result: $expect%g")
 
-      var left = 0.0
+      var left = java.lang.Double.MIN_VALUE
       var right = expect.toDouble
 
+      def invariant(): Boolean = fn(left) < expect && fn(right) > expect
+
+      assert(invariant())
       while ((right - left) > 1) {
         val middle = (left + right) / 2
         if (fn(middle) < expect) {
@@ -28,7 +31,9 @@ object NLgNApp {
         } else {
           right = middle
         }
+        assert(invariant())
       }
+      assert(invariant())
 
       val result = left.floor
       println(f"fn($result%g) = ${fn(result.toDouble)}%g")

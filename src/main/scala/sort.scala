@@ -14,6 +14,13 @@ object SortApp {
       (x: Int, y: Int) => x > y
     }
 
+    def invariant(len: Int): Boolean =
+      list.take(len).sliding(2).forall {
+        case Array(x, y) => x == y || !comparator(x, y)
+        case _ => true
+      }
+
+    assert(invariant(0))
     for {
       j <- 1 to list.length - 1
     } {
@@ -24,7 +31,9 @@ object SortApp {
         i -= 1
       }
       list(i + 1) = key
+      assert(invariant(j))
     }
+    assert(invariant(list.length))
   }
 
   def main(args: Array[String]): Unit = {

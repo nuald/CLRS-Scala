@@ -1,6 +1,6 @@
 #!/usr/bin/env scala
 
-import scala.util.control.Breaks._
+import scala.util.control.Breaks.{breakable, break}
 
 
 object SearchApp {
