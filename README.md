@@ -2,6 +2,6 @@
 
 CLRS related code in Scala
 
-Please use Gradle (ScalaStyle) to verify the code:
+Please use Gradle to verify the code for the Scala style and the full coverage:
 
-    $ gradle scalaStyle
+    $ gradle verify

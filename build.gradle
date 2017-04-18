@@ -37,4 +37,10 @@ scalaStyle {
   testSource = "src/test/scala"
 }
 
-test.dependsOn(scalaStyle)
+checkScoverage {
+    minimumRate = 1
+}
+
+task verify() {
+  dependsOn([scalaStyle, checkScoverage])
+}

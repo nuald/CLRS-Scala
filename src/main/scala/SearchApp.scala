@@ -40,11 +40,10 @@ object SearchApp {
         case itemPattern(c) => item = Some(c.toInt)
         case x: String => list :+= x.toInt
       })
-      val result = item match {
-        case Some(c) => linearSearch(c, list)
-        case None => None
+      item match {
+        case Some(c) => println(linearSearch(c, list))
+        case None => println(usage)
       }
-      println(result)
     } else {
       println(usage)
     }
