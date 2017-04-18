@@ -1,5 +1,3 @@
-#!/usr/bin/env scala
-
 import scala.util.control.Breaks.{breakable, break}
 
 

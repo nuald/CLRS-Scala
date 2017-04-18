@@ -1,5 +1,3 @@
-#!/usr/bin/env scala
-
 object NLgNApp {
   val usage = """
     Usage: nlng.scala <expected num>

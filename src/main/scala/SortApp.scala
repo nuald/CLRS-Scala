@@ -1,5 +1,3 @@
-#!/usr/bin/env scala
-
 object SortApp {
   val usage = """
     Usage: sort.scala [--reverse] <list of numbers>
