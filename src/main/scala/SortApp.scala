@@ -3,7 +3,7 @@ object SortApp {
     Usage: sort.scala [--reverse] <list of numbers>
 
     Sorts the list of integer numbers separated by space.
-  """
+"""
 
   def insertionSort(list: Array[Int], reverse: Boolean): Unit = {
     val comparator = if (reverse) {

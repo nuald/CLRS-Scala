@@ -5,7 +5,7 @@ object NLgNApp {
     Calculates the biggest integer N for N * lg(N) < expected number.
     Multiplication operator is supported to evaluate the expected number, e.g.
     nlng "60 * 1000000"
-  """
+"""
 
   def main(args: Array[String]): Unit = {
     if (args.length > 0) {

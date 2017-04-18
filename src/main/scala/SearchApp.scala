@@ -6,7 +6,7 @@ object SearchApp {
     Usage: search.scala --item=<number> <list of numbers>
 
     Search the item in the list of integer numbers separated by space.
-  """
+"""
 
   def linearSearch(item: Int, list: Array[Int]): Option[Int] = {
     var index: Option[Int] = None
