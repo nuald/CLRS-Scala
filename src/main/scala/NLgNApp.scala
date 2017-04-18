@@ -2,22 +2,18 @@ object NLgNApp {
   val usage = """
     Usage: nlng.scala <expected num>
 
-    Calculates the biggest integer N for N * lg(N) < expected number.
+    Calculates the biggest integer N for N * lg(N) < expected positive number.
     Multiplication operator is supported to evaluate the expected number, e.g.
     nlng "60 * 1000000"
 """
 
-  def main(args: Array[String]): Unit = {
-    if (args.length > 0) {
-      val lnOf2 = scala.math.log(2)
-      def log2(x: Double): Double = scala.math.log(x) / lnOf2
-      def fn(x: Double): Double = x * log2(x)
+  val lnOf2 = scala.math.log(2)
+  def log2(x: Double): Double = scala.math.log(x) / lnOf2
+  def fn(x: Double): Double = x * log2(x)
 
-      val expect = args(0).split('*').foldLeft(1.0)(_.toDouble * _.toDouble)
-      println(f"Max expected result: $expect%g")
-
+  def calculate(expect: Double): Double = {
       var left = java.lang.Double.MIN_VALUE
-      var right = expect.toDouble
+      var right = expect
 
       def invariant(): Boolean = fn(left) < expect && fn(right) > expect
 
@@ -33,8 +29,21 @@ object NLgNApp {
       }
       assert(invariant())
 
-      val result = left.floor
-      println(f"fn($result%g) = ${fn(result.toDouble)}%g")
+      left.floor
+  }
+
+  def main(args: Array[String]): Unit = {
+    if (args.length > 0) {
+
+      val expect = args(0).split('*').foldLeft(1.0)(_.toDouble * _.toDouble)
+      if (expect > 2) {
+        println(f"Max expected result: $expect%g")
+
+        val result = calculate(expect)
+        println(f"fn($result%g) = ${fn(result)}%g")
+      } else {
+        println(usage)
+      }
     } else {
       println(usage)
     }
