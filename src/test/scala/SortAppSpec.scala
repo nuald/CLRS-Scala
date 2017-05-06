@@ -44,7 +44,7 @@ class SortAppSpec extends FlatSpec with Matchers {
       SortApp.main(Array())
     }
     stream.toString() should equal ("""
-    Usage: sort.scala [--reverse] <list of numbers>
+    Usage: scala SortApp.scala [--reverse] <list of numbers>
 
     Sorts the list of integer numbers separated by space.
 

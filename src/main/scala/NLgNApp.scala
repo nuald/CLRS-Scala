@@ -1,10 +1,10 @@
 object NLgNApp {
   val usage = """
-    Usage: nlng.scala <expected num>
+    Usage: scala NLgNApp.scala <expected num>
 
     Calculates the biggest integer N for N * lg(N) < expected positive number.
     Multiplication operator is supported to evaluate the expected number, e.g.
-    nlng "60 * 1000000"
+    scala NLgNApp.scala "60 * 1000000"
 """
 
   val lnOf2 = scala.math.log(2)

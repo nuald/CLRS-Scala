@@ -12,7 +12,7 @@ class SearchAppSpec extends FlatSpec with Matchers {
   }
 
   val usage = """
-    Usage: search.scala --item=<number> <list of numbers>
+    Usage: scala SearchApp.scala --item=<number> <list of numbers>
 
     Search the item in the list of integer numbers separated by space.
 

@@ -3,7 +3,7 @@ import scala.util.control.Breaks.{breakable, break}
 
 object SearchApp {
   val usage = """
-    Usage: search.scala --item=<number> <list of numbers>
+    Usage: scala SearchApp.scala --item=<number> <list of numbers>
 
     Search the item in the list of integer numbers separated by space.
 """
